@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>13 - Properties - border:</title>
+  </head>
+  <body>
+    <div class="shape-3">
+      <style>
+        .shape-3 {
+          width: 15em;
+          height: 5rem;
+          background: #355e3b;
+          border-bottom-left-radius: 2rem;
+          border-top-right-radius: 2rem;
+          border-bottom-right-radius: 2rem;
+          position: relative;
+          margin-left: 1rem;
+          margin-bottom: 4em;
+        }
+
+        /* The top left cone */
+        .shape-3::before {
+          content: "";
+          width: 20px;
+          position: absolute;
+          top: 0;
+          left: -20px;
+          background: red;
+          border-top: 20px #355e3b solid;
+          border-left: 20px #282828 solid;
+        }
+
+        .shape-3::after {
+          content: "";
+          background: #a3a3a3 url("https://img.icons8.com/ios/30/multiply.png");
+          background-repeat: no-repeat;
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          position: absolute;
+          top: -0.5rem;
+          right: -0.5rem;
+          border: 4px solid #282828;
+        }
+      </style>
+    </div>
+
+    <div class="shape-5">
+      <style>
+        .shape-5 {
+          width: 5rem;
+          height: 5rem;
+          border-radius: 50%;
+          position: relative;
+          margin-bottom: 4rem;
+          background: conic-gradient(#4f7942 0% 50%, #355e3b 50% 100%);
+        }
+
+        .shape-5::after {
+          content: "";
+          width: 3rem;
+          height: 3rem;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background: #282828;
+          border-radius: 50%;
+        }
+      </style>
+    </div>
+
+    <div class="shape-4">
+      <style>
+        .shape-4 {
+          width: 10rem;
+          height: 5rem;
+          background: #355e3b80;
+          position: relative;
+          border-bottom-right-radius: 10rem;
+          border-bottom-left-radius: 10rem;
+          margin-bottom: 4rem;
+          overflow: hidden;
+        }
+
+        .shape-4:after {
+          content: "";
+          width: 10rem;
+          height: 100%;
+          background: #355e3b;
+          position: absolute;
+          top: 30%;
+        }
+      </style>
+    </div>
+
+    <div class="shape-0">
+      <style>
+        .shape-0 {
+          position: relative;
+          width: 10rem;
+          border-top: 2rem solid #355e3b;
+          border-right: 2rem solid transparent;
+          border-bottom: 2rem solid #4f7942;
+          padding-right: 4rem;
+          margin-bottom: 3rem;
+        }
+      </style>
+    </div>
+
+    <div class="shape-1">
+      <style>
+        .shape-1 {
+          --border-width: 5px;
+          --border-color: #4f7942;
+          width: 10rem;
+          height: 4rem;
+          padding-right: 4rem;
+          margin-bottom: 4rem;
+          position: relative;
+          border: var(--border-width) solid var(--border-color);
+        }
+
+        /* The dotted lines */
+        .shape-1::before {
+          content: "";
+          border-right: var(--border-width) dashed var(--border-color);
+          height: 100%;
+          position: absolute;
+          right: 20%;
+        }
+
+        /* The right semi circle */
+        .shape-1::after {
+          content: "";
+          width: 1.5rem;
+          height: 2.5rem;
+          position: absolute;
+          top: 50%;
+          right: 0;
+          transform: translate(var(--border-width), -50%);
+          border-top-left-radius: 2rem;
+          border-bottom-left-radius: 2rem;
+          border: var(--border-width) solid var(--border-color);
+          border-right: unset;
+          background: #282828;
+        }
+      </style>
+    </div>
+
+    <div class="shape-2">
+      <style>
+        .shape-2 {
+          --border-width: 6px;
+          --border-color: #4f7942;
+          width: 10rem;
+          height: 6rem;
+          padding-right: 4rem;
+          margin-bottom: 4rem;
+          position: relative;
+          border-right: var(--border-width) dashed #282828;
+          border-top-left-radius: 1rem;
+          border-bottom-left-radius: 1rem;
+          background: var(--border-color);
+        }
+      </style>
+    </div>
+    <style>
+      body {
+        background: #282828;
+      }
+    </style>
+  </body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>16 - Properties - position</title>
+  </head>
+  <body>
+    <h1>Relative & Absolute Positioning</h1>
+
+    <nav></nav>
+
+    <!-- When the absolute element does not have any parent with positioning set, thus the positioning is with respect to the viewport. -->
+    <div class="wrapper relative">
+      <div class="ball bg-one">One</div>
+
+      <div class="ball bg-two absolute" style="bottom: 50px; left: 80px">Two</div>
+    </div>
+
+    <div class="ball bg-three">Three</div>
+
+    <!-- In this case the absolute element does have a parent with relative positioning set, thus the positioning is with respect to the parent. -->
+    <div class="wrapper relative">
+      <div class="ball bg-four absolute" style="top: 10px; left: 150px">Four</div>
+    </div>
+
+    <!-- This is just cool scrollable effect. -->
+    <div class="scrollable-wrapper">
+      <h1>Sticky Positioning</h1>
+      <dl>
+        <dt>A</dt>
+        <dd>Apple</dd>
+        <dd>Ant</dd>
+        <dd>Altimeter</dd>
+        <dd>Airplane</dd>
+
+        <dt>B</dt>
+        <dd>Bird</dd>
+        <dd>Buzzard</dd>
+        <dd>Bee</dd>
+        <dd>Banana</dd>
+        <dd>Beanstalk</dd>
+
+        <dt>C</dt>
+        <dd>Calculator</dd>
+        <dd>Cane</dd>
+        <dd>Camera</dd>
+        <dd>Camel</dd>
+
+        <dt>D</dt>
+        <dd>Duck</dd>
+        <dd>Dime</dd>
+        <dd>Dipstick</dd>
+        <dd>Drone</dd>
+
+        <dt>E</dt>
+        <dd>Egg</dd>
+        <dd>Elephant</dd>
+        <dd>Egret</dd>
+      </dl>
+    </div>
+    <style>
+      /* This is similar to the default "static" positioning except the element can be moved around using top/bottom/left/right.*/
+      .relative {
+        position: relative;
+      }
+
+      /* Removes the element from the normal document flow. Top/left/bottom/right positioning behaves differently. Check code.
+*/
+      .absolute {
+        position: absolute;
+      }
+
+      .ball {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 5rem;
+        height: 5rem;
+        border: solid;
+        border-radius: 5rem;
+        border-color: #d3d3d3;
+        margin: 1em;
+        color: #264653;
+      }
+
+      .wrapper {
+        background-color: #ddbea980;
+        padding: 1em;
+        width: 50vw;
+        height: 10rem;
+        border-radius: 1em;
+        margin-top: 4rem;
+        margin-bottom: 4rem;
+      }
+
+      .bg-one {
+        background-color: #ffcdb2;
+      }
+      .bg-two {
+        background-color: #ffb4a2;
+      }
+      .bg-three {
+        background-color: #e5989b;
+      }
+      .bg-four {
+        background-color: #b5838d;
+      }
+
+      /* Cool Scrollable Effect */
+      .scrollable-wrapper {
+        width: 50vw;
+        height: 50vh;
+        padding: 1em;
+        border-radius: 1em;
+        background-color: #fefae0;
+        overflow: scroll;
+      }
+
+      dt {
+        position: sticky;
+        top: 0;
+        left: 0;
+
+        background-color: #ffddd2;
+        padding: 0.5em;
+        border-radius: 0.5em;
+      }
+
+      dd {
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+      }
+    </style>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>17 - Properties - overflow</title>
+  </head>
+  <body>
+    <div class="label"></div>
+    <style>
+      .label {
+        position: relative;
+        display: flex;
+        width: 15em;
+        height: 5em;
+        background-color: #282828;
+        overflow: hidden;
+      }
+
+      .label::after {
+        position: absolute;
+        right: 0;
+        transform: skew(-45deg);
+
+        content: "";
+        width: 5em;
+        height: 10em;
+        background-color: #662fbe;
+      }
+    </style>
+  </body>
+</html>

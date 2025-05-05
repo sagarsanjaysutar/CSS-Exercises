@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>03 - Syntax - Pseudo Classes</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <ul class="navbar-list">
+        <li class="navbar-item">Home</li>
+        <li class="navbar-item">About</li>
+        <li class="navbar-item active">Services</li>
+        <li class="navbar-item">Portfolio</li>
+        <li class="navbar-item">Team</li>
+        <li class="navbar-item">Blog</li>
+        <li class="navbar-item">Contact</li>
+        <li class="navbar-item">FAQ</li>
+        <li class="navbar-item">Testimonials</li>
+        <li class="navbar-item">Careers</li>
+      </ul>
+    </nav>
+    <style>
+      .navbar-list {
+        width: fit-content;
+        margin: 0;
+        padding: 1em;
+        display: flex;
+        list-style-type: none;
+        background-color: #d3d3d3;
+      }
+
+      .navbar-list .navbar-item {
+        margin-right: 1em;
+        border: solid;
+        border-top: unset;
+        border-left: unset;
+        border-bottom: unset;
+        border-width: 0.1em;
+        padding-right: 1em;
+        border-color: #28282880;
+        color: #282828;
+      }
+
+      /* Last Child Pseudo Class */
+      .navbar-list .navbar-item:last-child {
+        margin-right: unset;
+        border-right: unset;
+      }
+
+      .navbar-list .navbar-item:nth-child(n of .active) {
+        font-weight: 600;
+      }
+    </style>
+  </body>
+</html>

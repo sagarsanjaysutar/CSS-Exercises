@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>22 - Properties - Image Properties</title>
+  </head>
+  <body>
+    <div class="container">
+      <img class="image" src="https://pbs.twimg.com/media/CDALgN8WAAAfmjm.png" />
+      <img
+        class="logo"
+        src="https://www.instanetvasai.com/wp-content/uploads/2022/06/Instanet_New_Logo_LightGrey-Watermark.svg"
+      />
+    </div>
+    <style>
+      .container {
+        display: flex;
+        gap: 2em;
+      }
+
+      .image {
+        width: 10em;
+        height: 10em;
+        border-radius: 50%;
+        padding: 5px;
+        border: 3px solid #28282880;
+
+        /* Given height & width, "cover" scales the image to the given dimension.*/
+        object-fit: cover;
+      }
+
+      .logo {
+        width: 15em;
+        height: 5em;
+        background-color: red;
+        /*Given a width & height, "contain" displays the full image. It does not scale it like cover. */
+        object-fit: contain;
+      }
+    </style>
+  </body>
+</html>

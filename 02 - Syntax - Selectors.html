@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>02 - Syntax - Selectors</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="avatar online">
+        <div class="activity-status"></div>
+        <div class="avatar-outline">
+          <div class="avatar-image"></div>
+        </div>
+      </div>
+      <button class="primary-button loading">Copy</button>
+    </div>
+    <style>
+      .wrapper {
+        padding: 2rem;
+        background-color: #d3d3d3;
+        display: grid;
+        row-gap: 5em;
+      }
+
+      .avatar {
+        position: relative;
+        width: fit-content;
+      }
+
+      .avatar .activity-status {
+        display: inline;
+        position: absolute;
+        top: 1em;
+        right: 0.8em;
+        width: 2em;
+        height: 2em;
+        border-radius: 2em;
+        background-color: #a3a3a3;
+        z-index: 1;
+      }
+
+      /* Chaining: Add online class alongside avatar*/
+      .avatar.online .activity-status {
+        background-color: #08ef08;
+      }
+
+      .avatar-outline {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 10em;
+        height: 10em;
+        border: solid;
+        border-width: 0.25em;
+        border-radius: 10em;
+        border-color: #662fbe;
+      }
+
+      .avatar-image {
+        width: 9em;
+        height: 9em;
+        border-radius: 9em;
+        background-color: #662fbe;
+      }
+
+      .primary-button {
+        width: 5em;
+        padding: 0.5em;
+        color: #ffffff;
+        background-color: #662fbe;
+        border-radius: 0.5em;
+        border-width: 0px;
+        font-weight: 500;
+      }
+
+      /* Chaining: Add "loading" class alongside primary-button*/
+      .primary-button.loading {
+        color: #ffffff80;
+        background-color: #662fbe80;
+      }
+    </style>
+  </body>
+</html>

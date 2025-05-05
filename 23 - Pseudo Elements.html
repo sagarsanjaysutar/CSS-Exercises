@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>23 - Pseudo Elements</title>
+  </head>
+  <body>
+    <div class="label">
+      <img
+        class="logo"
+        src="https://www.instanetvasai.com/wp-content/uploads/2022/06/Instanet_New_Logo_LightGrey-Watermark.svg"
+      />
+    </div>
+
+    <div class="button-list">
+      <div class="button">1</div>
+      <div class="button">2</div>
+      <div class="button">3</div>
+    </div>
+
+    <div class="image-list">
+      <div class="image"></div>
+    </div>
+
+    <div class="tool-tip">Extra info here</div>
+    <style>
+      /**
+            * Showcasing the versatility of ::before & ::after Pseudo-elements.
+            */
+
+      /* Creates a label with left-side border (for aesthetic) + content of the label centered.
+            */
+      .label {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 15em;
+        height: 5em;
+        background-color: #282828;
+        overflow: hidden;
+
+        /* Adding a border here, pushes the Label content. Thus the content doesn't get truely centered. */
+        /*   border-left: 50px solid #d3d3d3;
+      box-sizing: border-box; */
+      }
+
+      .label::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+
+        /*
+       Adding a border here does not interfere with label content. You can truely "center" the content.
+      */
+        border-left: 10px solid #662fbe;
+        box-sizing: border-box;
+        z-index: 2;
+      }
+
+      .logo {
+        width: 70%;
+        height: auto;
+        object-fit: contain;
+        z-index: 1;
+      }
+
+      /* Create a bridge between the buttons. */
+      .button-list {
+        display: flex;
+        flex-direction: row;
+        gap: 1em;
+        margin-top: 3em;
+      }
+
+      .button {
+        width: 2em;
+        height: 2em;
+        border-radius: 50%;
+        color: #d3d3d3;
+        background-color: #662fbe;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        position: relative;
+      }
+
+      /*
+      Break down:
+        .button - Select the button class.
+        :not(:last-child) - Excludes the last child.
+        ::after - Adds a child after the button class.
+    */
+      .button:not(:last-child)::after {
+        content: "";
+        /*   border: 10px solid #282828; */
+        position: absolute;
+        right: -1.8em;
+        width: 2em;
+        height: 5px;
+        background-color: #662fbe;
+        z-index: -1;
+      }
+
+      /* Add tint to background images. */
+      .image-list {
+        display: flex;
+        flex-direction: row;
+        gap: 1em;
+
+        margin-top: 3em;
+      }
+
+      .image {
+        width: 20em;
+        height: 10em;
+        border-radius: 10px;
+
+        background: url(https://filmdaze.net/wp-content/uploads/2019/02/Game-of-Thrones_Cersei-Lannister-2-1-2158875165-1550372837207.jpg);
+        background-size: cover;
+
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* Added a tint. */
+      .image::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: "";
+        width: 100%;
+        height: 100%;
+        background-color: #282828;
+        opacity: 0.5;
+      }
+
+      /* A tool tip made using psuedo classes (:hover) & element (::before/::after) */
+      .tool-tip {
+        width: 10em;
+        height: 2em;
+        border-radius: 3px;
+        margin-top: 3em;
+        padding: 0.3em;
+        position: relative;
+        cursor: pointer;
+        background-color: #a3a3a3;
+      }
+
+      .tool-tip:hover::before {
+        content: "Extra Info here";
+        position: absolute;
+        top: 60px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        padding: 5px;
+        border-radius: 3px;
+        background-color: #d3d3d3;
+      }
+
+      .tool-tip:hover::after {
+        content: "";
+        position: absolute;
+        top: 55px;
+        left: 50%;
+        width: 10px;
+        height: 10px;
+        background-color: #d3d3d3;
+        transform: rotate(45deg);
+        z-index: -1;
+      }
+    </style>
+  </body>
+</html>

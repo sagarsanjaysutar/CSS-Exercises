@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>18 - Properties - transform</title>
+  </head>
+  <body>
+    <div class="dot-container">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+    <style>
+      .dot-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: fit-content;
+        height: 5em;
+      }
+      .dot:first-child {
+        margin-left: 4em;
+      }
+      .dot {
+        display: flex;
+        width: 2em;
+        height: 2em;
+        border-radius: 2px;
+        background-color: #d3d3d3;
+        margin-right: 4em;
+        transform: skew(25deg);
+        transition: all 0.15s;
+      }
+
+      .dot:hover {
+        transform: scale(1.5) skew(-25deg);
+      }
+    </style>
+  </body>
+</html>
